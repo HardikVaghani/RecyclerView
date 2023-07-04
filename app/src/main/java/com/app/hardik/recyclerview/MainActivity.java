@@ -5,6 +5,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,5 +45,33 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MyAdapter(data);
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                // Handle item click here
+            }
+        });
+
+        adapter.setOnItemLongClickListener(new OnItemLongClickListener() {
+            @Override
+            public void onItemLongClick(int position) {
+                // Handle item long click here
+            }
+        });
+
+        adapter.setOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(int position, View childView) {
+                // Handle child view click here
+            }
+        });
+
+        adapter.setOnItemChildLongClickListener(new OnItemChildLongClickListener() {
+            @Override
+            public void onItemChildLongClick(int position, View childView) {
+                // Handle child view long click here
+            }
+        });
     }
 }
