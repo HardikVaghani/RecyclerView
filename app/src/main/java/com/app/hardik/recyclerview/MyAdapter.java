@@ -53,14 +53,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(v -> {
             if (itemClickListener != null) {
                 itemClickListener.onItemClick(position);
-                CustomSnackbar.make(v, "This is a custom Snackbar!", Snackbar.LENGTH_SHORT).show();
+//                CustomSnackbar.make(v, "This is a custom Snackbar!", Snackbar.LENGTH_SHORT).show();
+                CustomToast.showToast(v.getContext(), item);
             }
         });
 
         holder.itemView.setOnLongClickListener(v -> {
             if (itemLongClickListener != null) {
                 itemLongClickListener.onItemLongClick(position);
-                CustomSnackbar.make(v, item, Snackbar.LENGTH_SHORT).show();
+                CustomToast.showToast(v.getContext(), item);
+//                CustomSnackbar.make(v, item, Snackbar.LENGTH_SHORT).show();
                 return true; // Return true to consume the long click event
             }
             return false;
